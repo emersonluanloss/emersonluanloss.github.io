@@ -18,89 +18,101 @@ header {
   background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: white;
   text-align: center;
-  padding: 40px 20px 100px;
-  position: relative;
-  overflow: hidden;
+  padding: 60px 20px 120px;
 }
 
-/* IMAGEM PRINCIPAL (CRIANÇA) */
-.child-img {
-  max-width: 480px;
+/* CONTAINER DA IMAGEM */
+.hero {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* IMAGEM PRINCIPAL */
+.hero img {
   width: 100%;
   border-radius: 16px;
-  margin-bottom: 20px;
+  display: block;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-/* IMAGEM EXTRA (FLUTUANTE) */
-.extra-img {
-  position: absolute;
-  top: 60px;
-  left: 5%;
-  width: 180px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  transform: rotate(-5deg);
-}
-
-/* BALÕES */
+/* BALÕES SOBREPOSTOS */
 .bubble {
   position: absolute;
-  background: white;
-  color: #1e3c72;
   padding: 10px 15px;
   border-radius: 20px;
   font-weight: bold;
+  font-size: 14px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.sos { top: 20px; right: 10%; background: #ff4d4d; color: white; }
-.chat { top: 90px; right: 5%; }
-.loc { bottom: 60px; left: 15%; }
-.lock { bottom: 20px; right: 15%; }
+/* POSIÇÕES CERTAS (EM CIMA DA IMAGEM) */
+.sos {
+  top: 10px;
+  right: 10px;
+  background: #ff4d4d;
+  color: white;
+}
 
-/* CONTAINER */
+.chat {
+  top: 80px;
+  left: -20px;
+  background: white;
+  color: #1e3c72;
+}
+
+.loc {
+  bottom: 60px;
+  left: 10px;
+  background: white;
+}
+
+.lock {
+  bottom: 10px;
+  right: 10px;
+  background: white;
+}
+
+/* TEXTOS HEADER */
+header h1 {
+  margin-top: 30px;
+  font-size: 2.2em;
+}
+
+/* CONTEÚDO */
 .container {
   max-width: 900px;
-  margin: -60px auto 80px;
+  margin: -80px auto 60px;
   background: white;
-  padding: 30px;
+  padding: 40px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   position: relative;
 }
 
-/* IMAGEM DO PAI */
+/* IMAGEM DO PAI (CORRIGIDO) */
 .father-img {
   position: absolute;
-  bottom: -50px;
-  right: -40px;
+  right: -220px;
+  top: 100px;
   width: 260px;
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  transition: 0.3s;
-}
-
-.father-img:hover {
-  transform: scale(1.05);
 }
 
 /* RESPONSIVO */
-@media (max-width: 768px) {
-  .extra-img {
-    display: none;
-  }
-
+@media (max-width: 1100px) {
   .father-img {
     position: static;
     display: block;
-    margin: 20px auto 0;
+    margin: 30px auto;
   }
 }
 
 /* TEXTOS */
-h1 { margin: 0; }
-h2 { color: #1e3c72; }
+h2 {
+  color: #1e3c72;
+}
 
 .highlight {
   background: #eef3ff;
@@ -121,17 +133,15 @@ footer {
 
 <header>
 
-  <!-- IMAGEM EXTRA -->
-  <img src="https://imgur.com/YQJhL3H.png" class="extra-img">
+  <div class="hero">
+    <img src="https://i.imgur.com/K9EmMAn.png">
 
-  <!-- BALÕES -->
-  <div class="bubble sos">🚨 SOS</div>
-  <div class="bubble chat">💬 Chat</div>
-  <div class="bubble loc">📍 Localização</div>
-  <div class="bubble lock">🔒 Bloqueio</div>
-
-  <!-- IMAGEM DO CABEÇALHO -->
-  <img src="https://imgur.com/K9EmMAn.png" class="child-img">
+    <!-- BALÕES AGORA CORRETOS -->
+    <div class="bubble sos">🚨 SOS</div>
+    <div class="bubble chat">💬 Chat</div>
+    <div class="bubble loc">📍 Localização</div>
+    <div class="bubble lock">🔒 Bloqueio</div>
+  </div>
 
   <h1>Política de Privacidade</h1>
   <p>Fortiva Guard</p>
@@ -181,7 +191,7 @@ Ao utilizar o app, você confirma que é responsável legal pelo menor monitorad
 </p>
 
 <!-- IMAGEM DO PAI -->
-<img src="https://imgur.com/EOmkxJn.png" class="father-img">
+<img src="https://i.imgur.com/EOmkxJn.png" class="father-img">
 
 </div>
 
