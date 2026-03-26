@@ -13,17 +13,18 @@ body {
   color: #333;
 }
 
-/* HEADER COM IMAGEM */
+/* HEADER */
 header {
   background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: white;
   text-align: center;
-  padding: 40px 20px 80px;
+  padding: 40px 20px 100px;
   position: relative;
   overflow: hidden;
 }
 
-.header-img {
+/* IMAGEM DA CRIANÇA */
+.child-img {
   max-width: 500px;
   width: 100%;
   border-radius: 16px;
@@ -44,53 +45,53 @@ header {
 
 .sos { top: 30px; left: 10%; background: #ff4d4d; color: white; }
 .chat { top: 80px; right: 10%; }
-.loc { bottom: 40px; left: 15%; }
-.lock { bottom: 20px; right: 15%; }
+.loc { bottom: 50px; left: 15%; }
+.lock { bottom: 30px; right: 15%; }
 
 /* CONTAINER */
 .container {
   max-width: 900px;
-  margin: -60px auto 30px;
+  margin: -60px auto 60px;
   background: white;
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  position: relative;
 }
 
-/* TÍTULOS */
+/* IMAGEM DO PAI */
+.father-img {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 280px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.father-img:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .father-img {
+    position: static;
+    display: block;
+    margin: 20px auto 0;
+  }
+}
+
+/* TEXTOS */
 h1 { margin: 0; }
 h2 { color: #1e3c72; }
 
-/* CARD DE DESTAQUE */
 .highlight {
   background: #eef3ff;
   padding: 15px;
   border-left: 5px solid #2a5298;
   border-radius: 8px;
-}
-
-/* SEÇÃO VISUAL (PAI MONITORANDO) */
-.monitoring {
-  margin-top: 40px;
-  padding: 20px;
-  background: linear-gradient(135deg, #eaf0ff, #ffffff);
-  border-radius: 12px;
-}
-
-.phone {
-  background: #1e3c72;
-  color: white;
-  padding: 15px;
-  border-radius: 12px;
-  width: 200px;
-  margin: auto;
-  text-align: center;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.stat {
-  margin: 10px 0;
-  font-size: 0.9em;
 }
 
 footer {
@@ -111,8 +112,8 @@ footer {
   <div class="bubble loc">📍 Localização</div>
   <div class="bubble lock">🔒 Bloqueio</div>
 
-  <!-- IMAGEM -->
-  <img src="fortiva-banner.png" class="header-img">
+  <!-- IMAGEM DA CRIANÇA -->
+  <img src="img/crianca.png" class="child-img" alt="Criança usando celular">
 
   <h1>Política de Privacidade</h1>
   <p>Fortiva Guard</p>
@@ -132,42 +133,27 @@ com transparência e proteção de dados.
 Ao utilizar o app, você confirma que é responsável legal pelo menor monitorado.
 </div>
 
-<h2>📱 Funcionalidades do App</h2>
+<h2>📱 Funcionalidades</h2>
 <ul>
 <li>📍 Localização em tempo real</li>
-<li>⏱ Controle de tempo de uso</li>
+<li>💬 Chat com a criança</li>
 <li>🔒 Bloqueio de aplicativos</li>
-<li>📊 Estatísticas detalhadas</li>
+<li>📊 Estatísticas de uso</li>
 <li>🚨 Botão SOS</li>
-<li>💬 Chat entre responsável e criança</li>
 </ul>
 
-<h2>🔐 Segurança de Dados</h2>
+<h2>🔐 Segurança</h2>
 <ul>
-<li>Criptografia de ponta (HTTPS/SSL)</li>
-<li>Dados não são vendidos</li>
-<li>Acesso restrito ao responsável</li>
+<li>Criptografia HTTPS/SSL</li>
+<li>Dados protegidos e privados</li>
+<li>Controle exclusivo do responsável</li>
 </ul>
 
-<h2>📊 Monitoramento Inteligente</h2>
-
-<div class="monitoring">
-  <h3 style="text-align:center;">👨‍👦 Controle em tempo real</h3>
-
-  <div class="phone">
-    <div class="stat">📱 Uso hoje: 3h 20min</div>
-    <div class="stat">📍 Local: Em movimento</div>
-    <div class="stat">🔒 Apps bloqueados: 2</div>
-    <div class="stat">🔋 Bateria: 68%</div>
-  </div>
-
-</div>
-
-<h2>📄 Direitos do Usuário</h2>
+<h2>📄 Direitos</h2>
 <ul>
-<li>Solicitar exclusão de dados</li>
+<li>Excluir dados</li>
 <li>Revogar permissões</li>
-<li>Acessar informações armazenadas</li>
+<li>Acessar informações</li>
 </ul>
 
 <h2>📩 Contato</h2>
@@ -175,6 +161,9 @@ Ao utilizar o app, você confirma que é responsável legal pelo menor monitorad
 📧 support@fortiva.tech<br>
 🌐 fortiva.tech
 </p>
+
+<!-- IMAGEM DO PAI -->
+<img src="img/pai.png" class="father-img" alt="Pai monitorando estatísticas">
 
 </div>
 
