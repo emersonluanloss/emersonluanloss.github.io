@@ -1,317 +1,411 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>Política de Privacidade - Fortiva Guard</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <style>
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #f4f6f9;
-  color: #333;
+:root{
+  --bg:#f4f6f9;
+  --card:#ffffff;
+  --text:#1a2230;
+  --muted:#5b6b7a;
+  --brand1:#1e3c72;
+  --brand2:#2a5298;
+  --accent:#0a9396;
+  --danger:#ff4d4d;
+  --shadow: 0 14px 40px rgba(0,0,0,.12);
+  --radius: 18px;
 }
 
-/* HERO (BANNER PROFISSIONAL) */
-.hero {
-  position: relative;
-  min-height: 180px;
-  height: clamp(580px, 28vw, 260px);
-  background: url('https://i.imgur.com/K9EmMAn.png') center/contain no-repeat;
-  background-color: #0d1b2a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  overflow: hidden;
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family:"Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* OVERLAY */
-.hero-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
+a{ color:inherit; }
+
+/* HERO */
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+  background:
+    radial-gradient(1200px 380px at 50% 10%, rgba(255,255,255,.18), transparent 60%),
+    linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.75)),
+    url('https://i.imgur.com/K9EmMAn.png') center/cover no-repeat;
 }
 
-/* TEXTO HERO */
-.hero-content {
-  position: relative;
-  color: white;
-  z-index: 2;
-  padding: 0 16px;
-}
-
-.hero-content h1 {
-  margin: 0;
-  font-size: 2.1em;
-}
-
-.hero-content p {
-  margin: 8px 0 0;
-}
-
-/* BALÕES (melhorados + animação) */
-.bubble{
-  position: absolute;
-  padding: 10px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .2px;
-  z-index: 2;
-
-  color: #0b1b2b;
-  background: rgba(255,255,255,.88);
-  border: 1px solid rgba(255,255,255,.55);
-  box-shadow:
-    0 10px 28px rgba(0,0,0,.22),
-    inset 0 1px 0 rgba(255,255,255,.55);
-
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  transform: translateY(10px) scale(.98);
-  opacity: 0;
-  animation: bubbleIn .55s ease forwards, bubbleFloat 3.8s ease-in-out infinite;
-}
-
-.bubble::after{
+/* camada de “vinheta” para dar contraste */
+.hero::after{
   content:"";
   position:absolute;
-  left: 18px;
-  bottom: -7px;
-  width: 12px;
-  height: 12px;
-  background: rgba(255,255,255,.88);
-  border-right: 1px solid rgba(255,255,255,.55);
-  border-bottom: 1px solid rgba(255,255,255,.55);
-  transform: rotate(45deg);
-  filter: drop-shadow(0 8px 10px rgba(0,0,0,.12));
+  inset:0;
+  background: radial-gradient(900px 320px at 50% 30%, rgba(0,0,0,.12), rgba(0,0,0,.65));
+  pointer-events:none;
 }
 
-/* posições melhores */
-.sos{
-  top: 18px;
-  right: clamp(14px, 4vw, 28px);
-  background: rgba(255,77,77,.95);
-  border-color: rgba(255,255,255,.25);
-  color: #fff;
-  animation-delay: .05s;
+.hero-inner{
+  position:relative;
+  z-index:1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 26px 18px 30px;
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 18px;
+  align-items:center;
+  min-height: clamp(220px, 26vw, 300px);
 }
 
-.chat{
-  top: clamp(70px, 10vw, 110px);
-  left: clamp(14px, 5vw, 44px);
-  animation-delay: .12s;
+.hero-copy{
+  color:#fff;
 }
 
-.loc{
-  bottom: clamp(42px, 7vw, 70px);
-  left: clamp(18px, 7vw, 70px);
-  animation-delay: .20s;
+.hero-kicker{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-weight:600;
+  color: rgba(255,255,255,.92);
 }
 
-.lock{
-  bottom: clamp(20px, 4vw, 40px);
-  right: clamp(18px, 6vw, 60px);
-  animation-delay: .28s;
+.hero h1{
+  margin: 14px 0 8px;
+  font-size: clamp(26px, 3.2vw, 42px);
+  line-height: 1.05;
+  letter-spacing: -0.4px;
+  text-shadow: 0 10px 30px rgba(0,0,0,.45);
 }
 
-/* animações */
-@keyframes bubbleIn{
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes bubbleFloat{
-  0%,100% { transform: translateY(0) scale(1); }
-  50%     { transform: translateY(-8px) scale(1.01); }
+.hero p{
+  margin: 6px 0 0;
+  color: rgba(255,255,255,.88);
 }
 
-/* respeitar acessibilidade */
-@media (prefers-reduced-motion: reduce){
-  .bubble{ animation: none; opacity: 1; transform: none; }
+.hero-meta{
+  margin-top: 12px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  color: rgba(255,255,255,.82);
+  font-size: 14px;
 }
 
-/* CONTAINER */
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  background: white;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+.pill{
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.16);
+}
+
+/* IMAGEM DO MENINO (AJUSTADA) */
+.hero-visual{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.kid-card{
+  width: min(360px, 92%);
+  border-radius: 20px;
+  overflow:hidden;
+  box-shadow: 0 18px 60px rgba(0,0,0,.40);
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transform: translateY(6px);
+}
+
+.kid-card img{
+  width: 100%;
+  height: auto;
+  display:block;
+}
+
+/* CONTEÚDO */
+.container{
+  max-width: 1100px;
+  margin: 18px auto 60px;
+  padding: 0 18px;
+}
+
+.section{
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.section + .section{ margin-top: 16px; }
+
+.section h2{
+  margin: 0 0 10px;
+  color: var(--brand1);
+}
+
+.lead{
+  margin: 0 0 14px;
+  color: var(--muted);
   line-height: 1.7;
 }
 
-/* TEXTOS */
-h2 {
-  color: #1e3c72;
-  margin-top: 30px;
+/* CARDS (BALÕES ESPALHADOS) */
+.feature-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
 }
 
-h3 {
-  margin-top: 20px;
+.feature{
+  position:relative;
+  border-radius: 16px;
+  padding: 14px 14px;
+  border: 1px solid rgba(30,60,114,.10);
+  background: linear-gradient(180deg, rgba(30,60,114,.06), rgba(10,147,150,.04));
+  box-shadow: 0 10px 26px rgba(0,0,0,.06);
+  overflow:hidden;
+  transform: translateY(6px);
+  opacity: 0;
+  animation: cardIn .55s ease forwards;
 }
 
-ul {
-  padding-left: 20px;
+.feature:nth-child(1){ animation-delay:.06s; }
+.feature:nth-child(2){ animation-delay:.12s; }
+.feature:nth-child(3){ animation-delay:.18s; }
+.feature:nth-child(4){ animation-delay:.24s; }
+
+.feature .tag{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 13px;
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(255,255,255,.7);
 }
 
-.highlight {
+.tag-danger{
+  background: rgba(255,77,77,.95) !important;
+  border-color: rgba(255,255,255,.28) !important;
+  color:#fff;
+}
+
+.feature p{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* leve “flutuação” */
+.feature:hover{
+  transform: translateY(0);
+  transition: transform .18s ease;
+}
+
+@keyframes cardIn{
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* HIGHLIGHT */
+.highlight{
   background: #eef3ff;
-  padding: 15px;
-  border-left: 5px solid #2a5298;
-  border-radius: 8px;
+  padding: 14px;
+  border-left: 5px solid var(--brand2);
+  border-radius: 12px;
+  color: #20314a;
 }
+
+/* LISTAS */
+ul{ padding-left: 18px; }
+li{ margin: 8px 0; color: #24344a; }
 
 /* IMAGEM DO PAI */
-.father-section {
-  margin-top: 60px;
-  text-align: right;
+.father-section{
+  display:flex;
+  justify-content:flex-end;
+  margin-top: 18px;
 }
 
-.father-img {
-  width: 260px;
-  max-width: 90%;
-  height: auto;
+.father-img{
+  width: min(280px, 90%);
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .bubble {
-    display: none;
-  }
-
-  .container {
-    padding: 22px;
-    margin: 24px 12px;
-  }
-
-  .hero-content h1 {
-    font-size: 1.7em;
-  }
-
-  .father-section {
-    text-align: center;
-  }
+  box-shadow: 0 18px 50px rgba(0,0,0,.18);
 }
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #777;
+footer{
+  text-align:center;
+  padding: 22px 18px;
+  color: #6a7786;
+}
+
+/* RESPONSIVO */
+@media (max-width: 920px){
+  .hero-inner{
+    grid-template-columns: 1fr;
+    text-align:center;
+    padding-bottom: 18px;
+  }
+  .hero-meta{ justify-content:center; }
+  .kid-card{ width: min(420px, 92%); }
+  .feature-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .father-section{ justify-content:center; }
+}
+
+@media (max-width: 520px){
+  .feature-grid{ grid-template-columns: 1fr; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-kicker">Fortiva Guard • Segurança inteligente para sua família</div>
+      <h1>Política de Privacidade</h1>
+      <p>Transparência sobre coleta, uso e proteção de dados.</p>
 
-  <div class="hero-overlay"></div>
+      <div class="hero-meta">
+        <span class="pill">Última atualização: 25/03/2026</span>
+        <span class="pill">Controle parental (Parent + Child)</span>
+      </div>
+    </div>
 
-  <div class="hero-content">
-    <h1>Política de Privacidade</h1>
-    <p>Fortiva Guard</p>
-    <p>Última atualização: 25/03/2026</p>
+    <div class="hero-visual">
+      <!-- Ajuste aqui para a imagem do menino -->
+      <div class="kid-card">
+        <img src="https://i.imgur.com/K9EmMAn.png" alt="Criança usando celular">
+      </div>
+    </div>
   </div>
+</header>
 
-  <!-- BALÕES -->
-  <div class="bubble sos">🚨 SOS</div>
-  <div class="bubble chat">💬 Chat</div>
-  <div class="bubble loc">📍 Localização</div>
-  <div class="bubble lock">🔒 Bloqueio</div>
+<main class="container">
 
-</div>
+  <!-- “BALÕES” ESPALHADOS AQUI (EM CARDS) -->
+  <section class="section">
+    <h2>Recursos principais</h2>
+    <p class="lead">Visão rápida do que o Fortiva Guard entrega para o responsável legal.</p>
 
-<div class="container">
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="tag tag-danger">🚨 SOS</div>
+        <p>Acionamento rápido para emergências com foco em segurança.</p>
+      </div>
+      <div class="feature">
+        <div class="tag">💬 Chat</div>
+        <p>Comunicação direta entre responsável e criança (incluindo voz, se aplicável).</p>
+      </div>
+      <div class="feature">
+        <div class="tag">📍 Localização</div>
+        <p>Rastreamento e histórico (quando permitido) para tranquilidade da família.</p>
+      </div>
+      <div class="feature">
+        <div class="tag">🔒 Bloqueio</div>
+        <p>Bloqueio de apps e regras de uso para reduzir riscos e distrações.</p>
+      </div>
+    </div>
+  </section>
 
-<p>
-A sua privacidade e a segurança da sua família são as nossas prioridades número um.
-Esta Política de Privacidade descreve como o Fortiva Guard (incluindo as versões "Parent" e "Child") coleta, usa, armazena e protege os dados dos usuários.
-</p>
+  <section class="section">
+    <p class="lead">
+      A sua privacidade e a segurança da sua família são as nossas prioridades número um.
+      Esta Política de Privacidade descreve como o Fortiva Guard (incluindo as versões "Parent" e "Child")
+      coleta, usa, armazena e protege os dados dos usuários.
+    </p>
 
-<div class="highlight">
-Ao utilizar nossos serviços, você, na qualidade de responsável legal, concorda explicitamente com as práticas descritas aqui.
-</div>
+    <div class="highlight">
+      Ao utilizar nossos serviços, você, na qualidade de responsável legal, concorda explicitamente com as práticas descritas aqui.
+    </div>
 
-<h2>1. Finalidade do Aplicativo</h2>
-<p>
-O Fortiva Guard é uma ferramenta de Controle Parental destinada exclusivamente ao monitoramento de menores de idade por seus pais ou responsáveis legais.
-O uso deste aplicativo para monitorar adultos ou para fins ilícitos é estritamente proibido e viola nossos Termos de Uso.
-</p>
+    <h2>1. Finalidade do Aplicativo</h2>
+    <p>
+      O Fortiva Guard é uma ferramenta de Controle Parental destinada exclusivamente ao monitoramento de menores de idade por seus pais ou responsáveis legais.
+      O uso deste aplicativo para monitorar adultos ou para fins ilícitos é estritamente proibido e viola nossos Termos de Uso.
+    </p>
 
-<h2>2. Informações que Coletamos</h2>
+    <h2>2. Informações que Coletamos</h2>
 
-<h3>A. Do Responsável (App Parent)</h3>
-<ul>
-<li>Dados de Cadastro: Nome, e-mail e senha (armazenados de forma criptografada via Firebase Auth)</li>
-<li>Dados de Faturamento: Processados pela Google Play Store e RevenueCat</li>
-<li>Câmera: Fotos de perfil ou pareamento</li>
-</ul>
+    <h3>A. Do Responsável (App Parent)</h3>
+    <ul>
+      <li>Dados de Cadastro: Nome, e-mail e senha (armazenados de forma criptografada via Firebase Auth)</li>
+      <li>Dados de Faturamento: Processados pela Google Play Store e RevenueCat</li>
+      <li>Câmera: Fotos de perfil ou pareamento</li>
+    </ul>
 
-<h3>B. Da Criança (App Child)</h3>
-<ul>
-<li>Localização precisa em segundo plano</li>
-<li>Uso de aplicativos (tempo de tela)</li>
-<li>Informações do dispositivo</li>
-<li>Microfone para mensagens de voz</li>
-</ul>
+    <h3>B. Da Criança (App Child)</h3>
+    <ul>
+      <li>Localização precisa em segundo plano</li>
+      <li>Uso de aplicativos (tempo de tela)</li>
+      <li>Informações do dispositivo</li>
+      <li>Microfone para mensagens de voz</li>
+    </ul>
 
-<h2>3. Uso de Permissões Sensíveis</h2>
-<ul>
-<li>Localização em segundo plano</li>
-<li>API de acessibilidade para bloqueio de apps</li>
-<li>Administrador do dispositivo</li>
-</ul>
+    <h2>3. Uso de Permissões Sensíveis</h2>
+    <ul>
+      <li>Localização em segundo plano</li>
+      <li>API de acessibilidade para bloqueio de apps</li>
+      <li>Administrador do dispositivo</li>
+    </ul>
 
-<h2>4. Compartilhamento de Dados</h2>
-<ul>
-<li>Dados compartilhados apenas com o responsável vinculado</li>
-<li>Não vendemos dados</li>
-<li>Uso de infraestrutura segura do Google (Firebase)</li>
-</ul>
+    <h2>4. Compartilhamento de Dados</h2>
+    <ul>
+      <li>Dados compartilhados apenas com o responsável vinculado</li>
+      <li>Não vendemos dados</li>
+      <li>Uso de infraestrutura segura do Google (Firebase)</li>
+    </ul>
 
-<h2>5. Segurança e Retenção</h2>
-<ul>
-<li>Transmissão via HTTPS/SSL</li>
-<li>Armazenamento por período limitado</li>
-<li>Exclusão total ao deletar conta</li>
-</ul>
+    <h2>5. Segurança e Retenção</h2>
+    <ul>
+      <li>Transmissão via HTTPS/SSL</li>
+      <li>Armazenamento por período limitado</li>
+      <li>Exclusão total ao deletar conta</li>
+    </ul>
 
-<h2>6. Direitos do Usuário</h2>
-<ul>
-<li>Acessar, corrigir ou excluir dados</li>
-<li>Revogar permissões</li>
-<li>Solicitar exclusão da conta</li>
-</ul>
+    <h2>6. Direitos do Usuário</h2>
+    <ul>
+      <li>Acessar, corrigir ou excluir dados</li>
+      <li>Revogar permissões</li>
+      <li>Solicitar exclusão da conta</li>
+    </ul>
 
-<h2>7. Alterações nesta Política</h2>
-<p>
-Podemos atualizar esta política periodicamente. Notificaremos mudanças importantes no aplicativo.
-</p>
+    <h2>7. Alterações nesta Política</h2>
+    <p>Podemos atualizar esta política periodicamente. Notificaremos mudanças importantes no aplicativo.</p>
 
-<h2>8. Contato</h2>
-<p>
-📧 support@fortiva.tech<br>
-🌐 fortiva.tech
-</p>
+    <h2>8. Contato</h2>
+    <p>
+      📧 support@fortiva.tech<br />
+      🌐 fortiva.tech
+    </p>
 
-<!-- IMAGEM DO PAI -->
-<div class="father-section">
-  <img src="https://i.imgur.com/EOmkxJn.png" class="father-img" alt="Pai monitorando estatísticas">
-</div>
+    <div class="father-section">
+      <img src="https://i.imgur.com/EOmkxJn.png" class="father-img" alt="Pai monitorando estatísticas" />
+    </div>
+  </section>
 
-</div>
+</main>
 
 <footer>
-© 2026 Fortiva Guard - Todos os direitos reservados
+  © 2026 Fortiva Guard - Todos os direitos reservados
 </footer>
 
 </body>
