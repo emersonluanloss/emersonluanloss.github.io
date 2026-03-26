@@ -1,0 +1,59 @@
+/* Styles for Fortiva Guard Landing Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+h1 {
+    margin: 0;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+nav {
+    margin: 20px 0;
+}
+a {
+    color: #35424a;
+    text-decoration: none;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+}
+.menu a {
+    margin: 0 15px;
+}
+.map-pin {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+.map-pin:hover .map-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+.map-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
