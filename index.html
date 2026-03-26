@@ -16,8 +16,10 @@ body {
 /* HERO (BANNER PROFISSIONAL) */
 .hero {
   position: relative;
-  height: 320px;
-  background: url('https://i.imgur.com/K9EmMAn.png') center/cover no-repeat;
+  min-height: 180px;
+  height: clamp(180px, 28vw, 260px); /* ajustado: menor e responsivo */
+  background: url('https://i.imgur.com/K9EmMAn.png') center/contain no-repeat; /* ajustado: não corta */
+  background-color: #0d1b2a; /* fundo para as bordas quando usar contain */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +34,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
 }
 
 /* TEXTO HERO */
@@ -40,11 +42,16 @@ body {
   position: relative;
   color: white;
   z-index: 2;
+  padding: 0 16px;
 }
 
 .hero-content h1 {
   margin: 0;
-  font-size: 2.2em;
+  font-size: 2.1em;
+}
+
+.hero-content p {
+  margin: 8px 0 0;
 }
 
 /* BALÕES */
@@ -123,6 +130,8 @@ ul {
 
 .father-img {
   width: 260px;
+  max-width: 90%;
+  height: auto;
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
@@ -131,6 +140,15 @@ ul {
 @media (max-width: 768px) {
   .bubble {
     display: none;
+  }
+
+  .container {
+    padding: 22px;
+    margin: 24px 12px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.7em;
   }
 
   .father-section {
@@ -170,7 +188,7 @@ footer {
 <div class="container">
 
 <p>
-A sua privacidade e a segurança da sua família são as nossas prioridades número um. 
+A sua privacidade e a segurança da sua família são as nossas prioridades número um.
 Esta Política de Privacidade descreve como o Fortiva Guard (incluindo as versões "Parent" e "Child") coleta, usa, armazena e protege os dados dos usuários.
 </p>
 
@@ -242,7 +260,7 @@ Podemos atualizar esta política periodicamente. Notificaremos mudanças importa
 
 <!-- IMAGEM DO PAI -->
 <div class="father-section">
-  <img src="https://i.imgur.com/EOmkxJn.png" class="father-img">
+  <img src="https://i.imgur.com/EOmkxJn.png" class="father-img" alt="Pai monitorando estatísticas">
 </div>
 
 </div>
