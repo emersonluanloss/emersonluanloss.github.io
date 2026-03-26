@@ -26,128 +26,55 @@ body{
   color: var(--text);
 }
 
-/* HERO 50/50: esquerda banner do menino, direita brasão */
+/* ========= HEADER (só o brasão) ========= */
 .hero{
   position: relative;
   width: 100%;
-  min-height: clamp(260px, 34vw, 440px);
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* meio a meio */
+  height: clamp(210px, 22vw, 320px);
+  background:
+    radial-gradient(900px 420px at 50% 35%, rgba(255,255,255,.14), transparent 60%),
+    radial-gradient(600px 320px at 20% 60%, rgba(42,82,152,.20), transparent 65%),
+    linear-gradient(135deg, rgba(18,42,74,.98), rgba(10,18,34,.98));
   border-bottom-left-radius: 28px;
   border-bottom-right-radius: 28px;
   overflow: hidden;
-  background: #0d1b2a;
 }
 
-/* lado esquerdo: banner do menino */
-.hero-left{
-  position: relative;
-  background: url('https://project-files.picsart.com/project_files/1f21170f-c270-4289-81b8-249d31bc7fe2.jpeg') center 35% / cover no-repeat;
-}
-
-/* acabamento/contraste */
-.hero-left::after{
+.hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.45));
+  background: linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.35));
   pointer-events:none;
 }
 
-/* lado direito: brasão centralizado e proporcional */
-.hero-right{
-  position: relative;
+/* Brasão MAIOR e proporcional */
+.hero-crest{
+  position:absolute;
+  inset: 0;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:
-    radial-gradient(900px 500px at 50% 40%, rgba(255,255,255,.10), transparent 60%),
-    linear-gradient(135deg, rgba(30,60,114,.92), rgba(13,27,42,.92));
-}
-
-.hero-crest{
-  width: min(70%, 360px); /* proporcional */
-  height: auto;
-  filter: drop-shadow(0 26px 55px rgba(0,0,0,.35));
-  opacity: .98;
+  z-index: 2;
 }
 
 .hero-crest img{
-  width:100%;
-  height:auto;
+  width: clamp(220px, 26vw, 420px); /* aumentei */
+  height: auto;
   display:block;
   object-fit: contain;
+  filter: drop-shadow(0 28px 60px rgba(0,0,0,.45));
+  opacity: .98;
 }
 
-/* BALÕES (ficam só no lado esquerdo) */
-.bubble{
-  position: absolute;
-  padding: 10px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 800;
-  z-index: 3;
-
-  color: #0b1b2b;
-  background: rgba(255,255,255,.88);
-  border: 1px solid rgba(255,255,255,.55);
-  box-shadow: 0 10px 28px rgba(0,0,0,.22);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  transform: translateY(10px);
-  opacity: 0;
-  animation: bubbleIn .55s ease forwards, bubbleFloat 3.8s ease-in-out infinite;
-}
-
-.bubble::after{
-  content:"";
-  position:absolute;
-  left: 18px;
-  bottom: -7px;
-  width: 12px;
-  height: 12px;
-  background: rgba(255,255,255,.88);
-  border-right: 1px solid rgba(255,255,255,.55);
-  border-bottom: 1px solid rgba(255,255,255,.55);
-  transform: rotate(45deg);
-}
-
-@keyframes bubbleIn{ to{ opacity:1; transform: translateY(0);} }
-@keyframes bubbleFloat{ 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-8px);} }
-
-.sos{
-  top: 18px;
-  right: 18px;
-  background: rgba(255,77,77,.95);
-  border-color: rgba(255,255,255,.25);
-  color:#fff;
-  animation-delay: .05s;
-}
-.chat{
-  top: 28%;
-  left: 18px;
-  animation-delay: .12s;
-}
-.loc{
-  bottom: 18px;
-  left: 18px;
-  animation-delay: .20s;
-}
-.lock{
-  bottom: 18px;
-  right: 18px;
-  animation-delay: .28s;
-}
-
-/* CONTAINER */
+/* ========= CONTEÚDO ========= */
 .container{
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 18px;
 }
 
-/* TÍTULO FORA DO HERO */
+/* TÍTULO FORA DO HEADER */
 .hero-title{
   margin-top: -26px;
   background: rgba(255,255,255,.92);
@@ -227,17 +154,7 @@ li{ margin: 8px 0; color: #24344a; }
   border: 1px solid rgba(30,60,114,.10);
   background: linear-gradient(180deg, rgba(30,60,114,.06), rgba(10,147,150,.04));
   box-shadow: 0 10px 26px rgba(0,0,0,.06);
-  transform: translateY(6px);
-  opacity: 0;
-  animation: cardIn .55s ease forwards;
 }
-
-.feature:nth-child(1){ animation-delay:.06s; }
-.feature:nth-child(2){ animation-delay:.12s; }
-.feature:nth-child(3){ animation-delay:.18s; }
-.feature:nth-child(4){ animation-delay:.24s; }
-
-@keyframes cardIn{ to{ opacity:1; transform: translateY(0); } }
 
 .feature .tag{
   display:inline-flex;
@@ -264,6 +181,51 @@ li{ margin: 8px 0; color: #24344a; }
   line-height: 1.5;
 }
 
+/* ========= RODAPÉ COM FOTO DO MENINO (lado esquerdo) ========= */
+.bottom-hero{
+  margin-top: 18px;
+  display:grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.kid-card{
+  border-radius: 18px;
+  overflow:hidden;
+  box-shadow: 0 18px 50px rgba(0,0,0,.14);
+  border: 1px solid rgba(30,60,114,.10);
+  background: #0d1b2a;
+}
+
+.kid-card img{
+  width:100%;
+  height: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  object-position: center 35%;
+  display:block;
+}
+
+.bottom-note{
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 18px;
+  border: 1px solid rgba(30,60,114,.10);
+}
+
+.bottom-note h2{
+  margin: 0 0 8px;
+  color: var(--brand1);
+}
+
+.bottom-note p{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 /* IMAGEM DO PAI */
 .father-section{
   display:flex;
@@ -288,23 +250,12 @@ footer{
 @media (max-width: 920px){
   .feature-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .father-section{ justify-content:center; }
-}
-
-/* no celular vira “stack” (um em cima do outro) */
-@media (max-width: 768px){
-  .hero{
-    grid-template-columns: 1fr;
-    border-radius: 0 0 22px 22px;
-  }
-  .hero-right{
-    min-height: 200px;
-  }
-  .bubble{ display:none; }
-  .hero-crest{ width: min(72%, 320px); }
+  .bottom-hero{ grid-template-columns: 1fr; }
 }
 
 @media (max-width: 520px){
   .feature-grid{ grid-template-columns: 1fr; }
+  .kid-card img{ max-height: 280px; }
 }
 </style>
 </head>
@@ -312,18 +263,8 @@ footer{
 <body>
 
 <header class="hero">
-  <div class="hero-left">
-    <!-- BALÕES NO LADO DO MENINO -->
-    <div class="bubble sos">🚨 SOS</div>
-    <div class="bubble chat">💬 Chat</div>
-    <div class="bubble loc">📍 Localização</div>
-    <div class="bubble lock">🔒 Bloqueio</div>
-  </div>
-
-  <div class="hero-right">
-    <div class="hero-crest">
-      <img src="https://project-files.picsart.com/project_files/05994a62-886b-4dee-88cc-9167a17dcbdc.png" alt="Brasão Fortiva Guard" />
-    </div>
+  <div class="hero-crest">
+    <img src="https://project-files.picsart.com/project_files/05994a62-886b-4dee-88cc-9167a17dcbdc.png" alt="Brasão Fortiva Guard" />
   </div>
 </header>
 
@@ -434,6 +375,21 @@ footer{
 
     <div class="father-section">
       <img src="https://i.imgur.com/EOmkxJn.png" class="father-img" alt="Pai monitorando estatísticas" />
+    </div>
+  </section>
+
+  <!-- FOTO DO MENINO NA PARTE INFERIOR (esquerda) -->
+  <section class="bottom-hero">
+    <div class="kid-card">
+      <img src="https://i.imgur.com/K9EmMAn.png" alt="Criança usando celular" />
+    </div>
+
+    <div class="bottom-note">
+      <h2>Compromisso com a segurança</h2>
+      <p>
+        Nosso objetivo é oferecer transparência, proteção de dados e ferramentas de controle parental para ajudar famílias
+        a manterem um ambiente digital mais seguro.
+      </p>
     </div>
   </section>
 
