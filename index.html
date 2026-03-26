@@ -13,29 +13,49 @@ body {
   color: #333;
 }
 
-/* HEADER MAIS FINO */
-header {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: white;
+/* HERO (BANNER PROFISSIONAL) */
+.hero {
+  position: relative;
+  height: 320px;
+  background: url('https://i.imgur.com/K9EmMAn.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 30px 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: hidden;
 }
 
-/* BANNER FULL WIDTH */
-.banner {
- width: 50%;
-  height: auto;
+/* OVERLAY */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
 }
 
-/* BALÕES DISTRIBUÍDOS */
+/* TEXTO HERO */
+.hero-content {
+  position: relative;
+  color: white;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  margin: 0;
+  font-size: 2.2em;
+}
+
+/* BALÕES */
 .bubble {
-  position: fixed;
-  padding: 10px 15px;
+  position: absolute;
+  padding: 8px 14px;
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  z-index: 10;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .sos {
@@ -46,27 +66,27 @@ header {
 }
 
 .chat {
-  top: 120px;
-  left: 20px;
+  top: 90px;
+  left: 40px;
   background: white;
 }
 
 .loc {
-  bottom: 120px;
-  left: 20px;
+  bottom: 60px;
+  left: 60px;
   background: white;
 }
 
 .lock {
-  bottom: 40px;
-  right: 20px;
+  bottom: 30px;
+  right: 40px;
   background: white;
 }
 
 /* CONTAINER */
 .container {
   max-width: 900px;
-  margin: 30px auto;
+  margin: 40px auto;
   background: white;
   padding: 40px;
   border-radius: 16px;
@@ -74,22 +94,20 @@ header {
   line-height: 1.7;
 }
 
-/* TÍTULOS */
-h1 {
-  margin: 10px 0;
-}
-
+/* TEXTOS */
 h2 {
   color: #1e3c72;
   margin-top: 30px;
 }
 
-/* LISTA */
+h3 {
+  margin-top: 20px;
+}
+
 ul {
   padding-left: 20px;
 }
 
-/* BLOCO */
 .highlight {
   background: #eef3ff;
   padding: 15px;
@@ -97,14 +115,14 @@ ul {
   border-radius: 8px;
 }
 
-/* IMAGEM DO PAI (AGORA CERTA) */
+/* IMAGEM DO PAI */
 .father-section {
-  margin-top: 50px;
+  margin-top: 60px;
   text-align: right;
 }
 
 .father-img {
-  width: 280px;
+  width: 260px;
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
@@ -131,20 +149,23 @@ footer {
 
 <body>
 
-<!-- BALÕES -->
-<div class="bubble sos">🚨 SOS</div>
-<div class="bubble chat">💬 Chat</div>
-<div class="bubble loc">📍 Localização</div>
-<div class="bubble lock">🔒 Bloqueio</div>
+<div class="hero">
 
-<header>
-  <h1>Política de Privacidade</h1>
-  <p>Fortiva Guard</p>
-  <p>Última atualização: 25/03/2026</p>
-</header>
+  <div class="hero-overlay"></div>
 
-<!-- IMAGEM FULL WIDTH -->
-<img src="https://i.imgur.com/K9EmMAn.png" class="banner">
+  <div class="hero-content">
+    <h1>Política de Privacidade</h1>
+    <p>Fortiva Guard</p>
+    <p>Última atualização: 25/03/2026</p>
+  </div>
+
+  <!-- BALÕES -->
+  <div class="bubble sos">🚨 SOS</div>
+  <div class="bubble chat">💬 Chat</div>
+  <div class="bubble loc">📍 Localização</div>
+  <div class="bubble lock">🔒 Bloqueio</div>
+
+</div>
 
 <div class="container">
 
@@ -160,21 +181,21 @@ Ao utilizar nossos serviços, você, na qualidade de responsável legal, concord
 <h2>1. Finalidade do Aplicativo</h2>
 <p>
 O Fortiva Guard é uma ferramenta de Controle Parental destinada exclusivamente ao monitoramento de menores de idade por seus pais ou responsáveis legais.
-O uso deste aplicativo para monitorar adultos ou para fins ilícitos é estritamente proibido.
+O uso deste aplicativo para monitorar adultos ou para fins ilícitos é estritamente proibido e viola nossos Termos de Uso.
 </p>
 
 <h2>2. Informações que Coletamos</h2>
 
 <h3>A. Do Responsável (App Parent)</h3>
 <ul>
-<li>Dados de Cadastro: Nome, e-mail e senha (criptografados via Firebase Auth)</li>
-<li>Dados de Faturamento: Processados pela Google Play e RevenueCat</li>
+<li>Dados de Cadastro: Nome, e-mail e senha (armazenados de forma criptografada via Firebase Auth)</li>
+<li>Dados de Faturamento: Processados pela Google Play Store e RevenueCat</li>
 <li>Câmera: Fotos de perfil ou pareamento</li>
 </ul>
 
 <h3>B. Da Criança (App Child)</h3>
 <ul>
-<li>Localização precisa em tempo real</li>
+<li>Localização precisa em segundo plano</li>
 <li>Uso de aplicativos (tempo de tela)</li>
 <li>Informações do dispositivo</li>
 <li>Microfone para mensagens de voz</li>
@@ -183,21 +204,21 @@ O uso deste aplicativo para monitorar adultos ou para fins ilícitos é estritam
 <h2>3. Uso de Permissões Sensíveis</h2>
 <ul>
 <li>Localização em segundo plano</li>
-<li>Acessibilidade para bloqueio de apps</li>
+<li>API de acessibilidade para bloqueio de apps</li>
 <li>Administrador do dispositivo</li>
 </ul>
 
 <h2>4. Compartilhamento de Dados</h2>
 <ul>
-<li>Apenas com responsável vinculado</li>
+<li>Dados compartilhados apenas com o responsável vinculado</li>
 <li>Não vendemos dados</li>
-<li>Infraestrutura Google (Firebase)</li>
+<li>Uso de infraestrutura segura do Google (Firebase)</li>
 </ul>
 
 <h2>5. Segurança e Retenção</h2>
 <ul>
-<li>HTTPS/SSL</li>
-<li>Dados armazenados por tempo limitado</li>
+<li>Transmissão via HTTPS/SSL</li>
+<li>Armazenamento por período limitado</li>
 <li>Exclusão total ao deletar conta</li>
 </ul>
 
@@ -205,11 +226,13 @@ O uso deste aplicativo para monitorar adultos ou para fins ilícitos é estritam
 <ul>
 <li>Acessar, corrigir ou excluir dados</li>
 <li>Revogar permissões</li>
-<li>Excluir conta</li>
+<li>Solicitar exclusão da conta</li>
 </ul>
 
-<h2>7. Alterações</h2>
-<p>Podemos atualizar esta política periodicamente.</p>
+<h2>7. Alterações nesta Política</h2>
+<p>
+Podemos atualizar esta política periodicamente. Notificaremos mudanças importantes no aplicativo.
+</p>
 
 <h2>8. Contato</h2>
 <p>
