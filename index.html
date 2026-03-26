@@ -23,13 +23,24 @@ header {
   overflow: hidden;
 }
 
-/* IMAGEM DA CRIANÇA */
+/* IMAGEM PRINCIPAL (CRIANÇA) */
 .child-img {
-  max-width: 500px;
+  max-width: 480px;
   width: 100%;
   border-radius: 16px;
   margin-bottom: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* IMAGEM EXTRA (FLUTUANTE) */
+.extra-img {
+  position: absolute;
+  top: 60px;
+  left: 5%;
+  width: 180px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transform: rotate(-5deg);
 }
 
 /* BALÕES */
@@ -43,15 +54,15 @@ header {
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.sos { top: 30px; left: 10%; background: #ff4d4d; color: white; }
-.chat { top: 80px; right: 10%; }
-.loc { bottom: 50px; left: 15%; }
-.lock { bottom: 30px; right: 15%; }
+.sos { top: 20px; right: 10%; background: #ff4d4d; color: white; }
+.chat { top: 90px; right: 5%; }
+.loc { bottom: 60px; left: 15%; }
+.lock { bottom: 20px; right: 15%; }
 
 /* CONTAINER */
 .container {
   max-width: 900px;
-  margin: -60px auto 60px;
+  margin: -60px auto 80px;
   background: white;
   padding: 30px;
   border-radius: 16px;
@@ -62,9 +73,9 @@ header {
 /* IMAGEM DO PAI */
 .father-img {
   position: absolute;
-  bottom: -40px;
+  bottom: -50px;
   right: -40px;
-  width: 280px;
+  width: 260px;
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   transition: 0.3s;
@@ -76,6 +87,10 @@ header {
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
+  .extra-img {
+    display: none;
+  }
+
   .father-img {
     position: static;
     display: block;
@@ -106,14 +121,17 @@ footer {
 
 <header>
 
+  <!-- IMAGEM EXTRA -->
+  <img src="https://imgur.com/YQJhL3H.png" class="extra-img">
+
   <!-- BALÕES -->
   <div class="bubble sos">🚨 SOS</div>
   <div class="bubble chat">💬 Chat</div>
   <div class="bubble loc">📍 Localização</div>
   <div class="bubble lock">🔒 Bloqueio</div>
 
-  <!-- IMAGEM DA CRIANÇA -->
-  <img src="img/crianca.png" class="child-img" alt="Criança usando celular">
+  <!-- IMAGEM DO CABEÇALHO -->
+  <img src="https://imgur.com/K9EmMAn.png" class="child-img">
 
   <h1>Política de Privacidade</h1>
   <p>Fortiva Guard</p>
@@ -163,7 +181,7 @@ Ao utilizar o app, você confirma que é responsável legal pelo menor monitorad
 </p>
 
 <!-- IMAGEM DO PAI -->
-<img src="img/pai.png" class="father-img" alt="Pai monitorando estatísticas">
+<img src="https://imgur.com/EOmkxJn.png" class="father-img">
 
 </div>
 
