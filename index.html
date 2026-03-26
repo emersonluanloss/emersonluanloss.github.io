@@ -13,107 +13,83 @@ body {
   color: #333;
 }
 
-/* HEADER */
+/* HEADER MAIS FINO */
 header {
   background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: white;
   text-align: center;
-  padding: 60px 20px 120px;
+  padding: 30px 20px;
 }
 
-/* CONTAINER DA IMAGEM */
-.hero {
-  position: relative;
-  max-width: 500px;
-  margin: auto;
-}
-
-/* IMAGEM PRINCIPAL */
-.hero img {
+/* BANNER FULL WIDTH */
+.banner {
   width: 100%;
-  border-radius: 16px;
   display: block;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-/* BALÕES SOBREPOSTOS */
+/* BALÕES DISTRIBUÍDOS */
 .bubble {
-  position: absolute;
+  position: fixed;
   padding: 10px 15px;
   border-radius: 20px;
-  font-weight: bold;
   font-size: 14px;
+  font-weight: bold;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 10;
 }
 
-/* POSIÇÕES CERTAS (EM CIMA DA IMAGEM) */
 .sos {
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   background: #ff4d4d;
   color: white;
 }
 
 .chat {
-  top: 80px;
-  left: -20px;
+  top: 120px;
+  left: 20px;
   background: white;
-  color: #1e3c72;
 }
 
 .loc {
-  bottom: 60px;
-  left: 10px;
+  bottom: 120px;
+  left: 20px;
   background: white;
 }
 
 .lock {
-  bottom: 10px;
-  right: 10px;
+  bottom: 40px;
+  right: 20px;
   background: white;
 }
 
-/* TEXTOS HEADER */
-header h1 {
-  margin-top: 30px;
-  font-size: 2.2em;
-}
-
-/* CONTEÚDO */
+/* CONTAINER */
 .container {
   max-width: 900px;
-  margin: -80px auto 60px;
+  margin: 30px auto;
   background: white;
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  position: relative;
+  line-height: 1.7;
 }
 
-/* IMAGEM DO PAI (CORRIGIDO) */
-.father-img {
-  position: absolute;
-  right: -220px;
-  top: 100px;
-  width: 260px;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+/* TÍTULOS */
+h1 {
+  margin: 10px 0;
 }
 
-/* RESPONSIVO */
-@media (max-width: 1100px) {
-  .father-img {
-    position: static;
-    display: block;
-    margin: 30px auto;
-  }
-}
-
-/* TEXTOS */
 h2 {
   color: #1e3c72;
+  margin-top: 30px;
 }
 
+/* LISTA */
+ul {
+  padding-left: 20px;
+}
+
+/* BLOCO */
 .highlight {
   background: #eef3ff;
   padding: 15px;
@@ -121,6 +97,30 @@ h2 {
   border-radius: 8px;
 }
 
+/* IMAGEM DO PAI (AGORA CERTA) */
+.father-section {
+  margin-top: 50px;
+  text-align: right;
+}
+
+.father-img {
+  width: 280px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .bubble {
+    display: none;
+  }
+
+  .father-section {
+    text-align: center;
+  }
+}
+
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
@@ -131,67 +131,96 @@ footer {
 
 <body>
 
+<!-- BALÕES -->
+<div class="bubble sos">🚨 SOS</div>
+<div class="bubble chat">💬 Chat</div>
+<div class="bubble loc">📍 Localização</div>
+<div class="bubble lock">🔒 Bloqueio</div>
+
 <header>
-
-  <div class="hero">
-    <img src="https://i.imgur.com/K9EmMAn.png">
-
-    <!-- BALÕES AGORA CORRETOS -->
-    <div class="bubble sos">🚨 SOS</div>
-    <div class="bubble chat">💬 Chat</div>
-    <div class="bubble loc">📍 Localização</div>
-    <div class="bubble lock">🔒 Bloqueio</div>
-  </div>
-
   <h1>Política de Privacidade</h1>
   <p>Fortiva Guard</p>
-  <p>Segurança inteligente para sua família</p>
-
+  <p>Última atualização: 25/03/2026</p>
 </header>
+
+<!-- IMAGEM FULL WIDTH -->
+<img src="https://i.imgur.com/K9EmMAn.png" class="banner">
 
 <div class="container">
 
 <p>
-Sua privacidade e a segurança da sua família são nossas prioridades.
-O <strong>Fortiva Guard</strong> foi criado para oferecer controle total,
-com transparência e proteção de dados.
+A sua privacidade e a segurança da sua família são as nossas prioridades número um. 
+Esta Política de Privacidade descreve como o Fortiva Guard (incluindo as versões "Parent" e "Child") coleta, usa, armazena e protege os dados dos usuários.
 </p>
 
 <div class="highlight">
-Ao utilizar o app, você confirma que é responsável legal pelo menor monitorado.
+Ao utilizar nossos serviços, você, na qualidade de responsável legal, concorda explicitamente com as práticas descritas aqui.
 </div>
 
-<h2>📱 Funcionalidades</h2>
+<h2>1. Finalidade do Aplicativo</h2>
+<p>
+O Fortiva Guard é uma ferramenta de Controle Parental destinada exclusivamente ao monitoramento de menores de idade por seus pais ou responsáveis legais.
+O uso deste aplicativo para monitorar adultos ou para fins ilícitos é estritamente proibido.
+</p>
+
+<h2>2. Informações que Coletamos</h2>
+
+<h3>A. Do Responsável (App Parent)</h3>
 <ul>
-<li>📍 Localização em tempo real</li>
-<li>💬 Chat com a criança</li>
-<li>🔒 Bloqueio de aplicativos</li>
-<li>📊 Estatísticas de uso</li>
-<li>🚨 Botão SOS</li>
+<li>Dados de Cadastro: Nome, e-mail e senha (criptografados via Firebase Auth)</li>
+<li>Dados de Faturamento: Processados pela Google Play e RevenueCat</li>
+<li>Câmera: Fotos de perfil ou pareamento</li>
 </ul>
 
-<h2>🔐 Segurança</h2>
+<h3>B. Da Criança (App Child)</h3>
 <ul>
-<li>Criptografia HTTPS/SSL</li>
-<li>Dados protegidos e privados</li>
-<li>Controle exclusivo do responsável</li>
+<li>Localização precisa em tempo real</li>
+<li>Uso de aplicativos (tempo de tela)</li>
+<li>Informações do dispositivo</li>
+<li>Microfone para mensagens de voz</li>
 </ul>
 
-<h2>📄 Direitos</h2>
+<h2>3. Uso de Permissões Sensíveis</h2>
 <ul>
-<li>Excluir dados</li>
+<li>Localização em segundo plano</li>
+<li>Acessibilidade para bloqueio de apps</li>
+<li>Administrador do dispositivo</li>
+</ul>
+
+<h2>4. Compartilhamento de Dados</h2>
+<ul>
+<li>Apenas com responsável vinculado</li>
+<li>Não vendemos dados</li>
+<li>Infraestrutura Google (Firebase)</li>
+</ul>
+
+<h2>5. Segurança e Retenção</h2>
+<ul>
+<li>HTTPS/SSL</li>
+<li>Dados armazenados por tempo limitado</li>
+<li>Exclusão total ao deletar conta</li>
+</ul>
+
+<h2>6. Direitos do Usuário</h2>
+<ul>
+<li>Acessar, corrigir ou excluir dados</li>
 <li>Revogar permissões</li>
-<li>Acessar informações</li>
+<li>Excluir conta</li>
 </ul>
 
-<h2>📩 Contato</h2>
+<h2>7. Alterações</h2>
+<p>Podemos atualizar esta política periodicamente.</p>
+
+<h2>8. Contato</h2>
 <p>
 📧 support@fortiva.tech<br>
 🌐 fortiva.tech
 </p>
 
 <!-- IMAGEM DO PAI -->
-<img src="https://i.imgur.com/EOmkxJn.png" class="father-img">
+<div class="father-section">
+  <img src="https://i.imgur.com/EOmkxJn.png" class="father-img">
+</div>
 
 </div>
 
