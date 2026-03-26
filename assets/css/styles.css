@@ -1,59 +1,47 @@
-/* Styles for Fortiva Guard Landing Page */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+.hero {
+  background: linear-gradient(135deg, #005f73, #0a9396);
+  color: white;
+  padding: 50px 0;
+  text-align: center;
 }
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  transition: transform 0.2s;
 }
-h1 {
-    margin: 0;
+
+.card:hover {
+  transform: scale(1.05);
 }
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+
+.button {
+  background-color: #0a9396;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.2s;
 }
-nav {
-    margin: 20px 0;
+
+.button:hover {
+  background-color: #005f73;
 }
-a {
-    color: #35424a;
-    text-decoration: none;
+
+.map-container {
+  height: 400px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
-.menu {
-    display: flex;
-    justify-content: center;
-}
-.menu a {
-    margin: 0 15px;
-}
-.map-pin {
-    position: relative;
-    display: inline-block;
-    margin: 20px;
-}
-.map-pin:hover .map-tooltip {
-    visibility: visible;
-    opacity: 1;
-}
-.map-tooltip {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #ffffff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-.smooth-scroll {
-    scroll-behavior: smooth;
+
+@media (max-width: 768px) {
+  .card {
+    margin: 10px;
+  }
 }
