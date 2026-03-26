@@ -48,7 +48,6 @@ body{
   pointer-events:none;
 }
 
-/* Brasão MAIOR e proporcional */
 .hero-crest{
   position:absolute;
   inset: 0;
@@ -59,7 +58,7 @@ body{
 }
 
 .hero-crest img{
-  width: clamp(220px, 26vw, 420px); /* aumentei */
+  width: clamp(240px, 28vw, 460px);
   height: auto;
   display:block;
   object-fit: contain;
@@ -74,7 +73,6 @@ body{
   padding: 0 18px;
 }
 
-/* TÍTULO FORA DO HEADER */
 .hero-title{
   margin-top: -26px;
   background: rgba(255,255,255,.92);
@@ -109,7 +107,6 @@ body{
   border: 1px solid rgba(42,82,152,.18);
 }
 
-/* SEÇÕES */
 .section{
   background: var(--card);
   border-radius: var(--radius);
@@ -181,62 +178,81 @@ li{ margin: 8px 0; color: #24344a; }
   line-height: 1.5;
 }
 
-/* ========= RODAPÉ COM FOTO DO MENINO (lado esquerdo) ========= */
-.bottom-hero{
-  margin-top: 18px;
+/* ========= BLOCO APELO (texto à esquerda, pai à direita) ========= */
+.cta{
+  margin-top: 16px;
   display:grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1.15fr .85fr;
   gap: 16px;
-  align-items: stretch;
+  align-items: center;
 }
 
-.kid-card{
-  border-radius: 18px;
-  overflow:hidden;
-  box-shadow: 0 18px 50px rgba(0,0,0,.14);
+.cta-text{
+  background: linear-gradient(135deg, rgba(30,60,114,.06), rgba(42,82,152,.03));
   border: 1px solid rgba(30,60,114,.10);
-  background: #0d1b2a;
-}
-
-.kid-card img{
-  width:100%;
-  height: 100%;
-  max-height: 360px;
-  object-fit: cover;
-  object-position: center 35%;
-  display:block;
-}
-
-.bottom-note{
-  background: var(--card);
   border-radius: 18px;
   box-shadow: var(--shadow);
-  padding: 18px;
-  border: 1px solid rgba(30,60,114,.10);
+  padding: 22px;
 }
 
-.bottom-note h2{
-  margin: 0 0 8px;
+.cta-text h2{
+  margin: 0 0 10px;
   color: var(--brand1);
+  font-size: 22px;
 }
 
-.bottom-note p{
-  margin: 0;
+.cta-text p{
+  margin: 0 0 14px;
   color: var(--muted);
   line-height: 1.7;
 }
 
-/* IMAGEM DO PAI */
-.father-section{
-  display:flex;
-  justify-content:flex-end;
-  margin-top: 18px;
+.cta-points{
+  margin: 0;
+  padding-left: 18px;
+  color: #24344a;
 }
 
-.father-img{
-  width: min(280px, 90%);
-  border-radius: 16px;
+.cta-points li{ margin: 8px 0; }
+
+.cta-actions{
+  margin-top: 14px;
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(42,82,152,.22);
+  background: #eef3ff;
+  color: #1e3c72;
+  font-weight: 800;
+  text-decoration:none;
+}
+
+.btn-primary{
+  background: linear-gradient(135deg, var(--brand1), var(--brand2));
+  border-color: rgba(255,255,255,.18);
+  color:#fff;
+}
+
+.cta-image{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.cta-image img{
+  width: min(320px, 100%);
+  height:auto;
+  border-radius: 18px;
   box-shadow: 0 18px 50px rgba(0,0,0,.18);
+  border: 1px solid rgba(30,60,114,.10);
 }
 
 /* FOOTER */
@@ -249,13 +265,12 @@ footer{
 /* RESPONSIVO */
 @media (max-width: 920px){
   .feature-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .father-section{ justify-content:center; }
-  .bottom-hero{ grid-template-columns: 1fr; }
+  .cta{ grid-template-columns: 1fr; }
+  .cta-image{ justify-content:center; }
 }
 
 @media (max-width: 520px){
   .feature-grid{ grid-template-columns: 1fr; }
-  .kid-card img{ max-height: 280px; }
 }
 </style>
 </head>
@@ -374,29 +389,27 @@ footer{
     </p>
   </section>
 
-  <section class="father-section">
-      <img src="https://i.imgur.com/EOmkxJn.png" class="father-img" alt="Pai monitorando estatísticas" />
- 
-    <div class="botton-hero">
-    <h2>Zelando pela segurança de nossos filhos.</h2>
+  <!-- BLOCO DE APELO + PAI À DIREITA -->
+  <section class="cta">
+    <div class="cta-text">
+      <h2>Zelando pela segurança de quem você mais ama.</h2>
       <p>
-      A quem tanto amamos!
+        Ser responsável é estar presente — mesmo quando você não está por perto.
+        O <strong>Fortiva Guard</strong> ajuda você a proteger seus filhos com ferramentas claras, seguras e fáceis de usar.
       </p>
+      <ul class="cta-points">
+        <li>Mais tranquilidade no dia a dia, com informação na hora certa.</li>
+        <li>Controle parental de verdade: localização, tempo de tela e bloqueios.</li>
+        <li>Feito para famílias que querem proteção sem complicação.</li>
+      </ul>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="https://fortiva.tech">Quero proteger minha família</a>
+        <a class="btn" href="mailto:support@fortiva.tech">Falar com suporte</a>
+      </div>
     </div>
-  </section>
 
-  <!-- FOTO DO MENINO NA PARTE INFERIOR (esquerda) -->
-  <section class="bottom-hero">
-    <div class="kid-card">
-      <img src="https://i.imgur.com/K9EmMAn.png" alt="Criança usando celular" />
-    </div>
-
-    <div class="bottom-note">
-      <h2>Compromisso com a segurança</h2>
-      <p>
-        Nosso objetivo é oferecer transparência, proteção de dados e ferramentas de controle parental para ajudar famílias
-        a manterem um ambiente digital mais seguro.
-      </p>
+    <div class="cta-image">
+      <img src="https://i.imgur.com/EOmkxJn.png" alt="Pai monitorando estatísticas" />
     </div>
   </section>
 
