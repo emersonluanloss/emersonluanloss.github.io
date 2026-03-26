@@ -1,168 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Política de Privacidade - Fortiva Guard</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Política de Privacidade - Fortiva Guard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f4f6f9;
-      color: #333;
-      line-height: 1.6;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
 
-    header {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
+/* HEADER COM IMAGEM */
+header {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  text-align: center;
+  padding: 40px 20px 80px;
+  position: relative;
+  overflow: hidden;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-    }
+.header-img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
 
-    header p {
-      margin-top: 10px;
-      opacity: 0.9;
-    }
+/* BALÕES */
+.bubble {
+  position: absolute;
+  background: white;
+  color: #1e3c72;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
 
-    .container {
-      max-width: 900px;
-      margin: -30px auto 30px;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
+.sos { top: 30px; left: 10%; background: #ff4d4d; color: white; }
+.chat { top: 80px; right: 10%; }
+.loc { bottom: 40px; left: 15%; }
+.lock { bottom: 20px; right: 15%; }
 
-    h2 {
-      color: #1e3c72;
-      margin-top: 30px;
-    }
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: -60px auto 30px;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
 
-    ul {
-      padding-left: 20px;
-    }
+/* TÍTULOS */
+h1 { margin: 0; }
+h2 { color: #1e3c72; }
 
-    li {
-      margin-bottom: 10px;
-    }
+/* CARD DE DESTAQUE */
+.highlight {
+  background: #eef3ff;
+  padding: 15px;
+  border-left: 5px solid #2a5298;
+  border-radius: 8px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #777;
-    }
+/* SEÇÃO VISUAL (PAI MONITORANDO) */
+.monitoring {
+  margin-top: 40px;
+  padding: 20px;
+  background: linear-gradient(135deg, #eaf0ff, #ffffff);
+  border-radius: 12px;
+}
 
-    .highlight {
-      background: #eef3ff;
-      padding: 10px;
-      border-left: 4px solid #2a5298;
-      margin: 15px 0;
-      border-radius: 6px;
-    }
-  </style>
+.phone {
+  background: #1e3c72;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  width: 200px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.stat {
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+</style>
 </head>
 
 <body>
 
 <header>
+
+  <!-- BALÕES -->
+  <div class="bubble sos">🚨 SOS</div>
+  <div class="bubble chat">💬 Chat</div>
+  <div class="bubble loc">📍 Localização</div>
+  <div class="bubble lock">🔒 Bloqueio</div>
+
+  <!-- IMAGEM -->
+  <img src="fortiva-banner.png" class="header-img">
+
   <h1>Política de Privacidade</h1>
   <p>Fortiva Guard</p>
-  <p>Última atualização: 2026</p>
+  <p>Segurança inteligente para sua família</p>
+
 </header>
 
 <div class="container">
 
-  <p>
-    A sua privacidade e a segurança da sua família são as nossas prioridades número um.
-    Esta Política de Privacidade descreve como o <strong>Fortiva Guard</strong> coleta,
-    usa, armazena e protege os dados dos usuários.
-  </p>
+<p>
+Sua privacidade e a segurança da sua família são nossas prioridades.
+O <strong>Fortiva Guard</strong> foi criado para oferecer controle total,
+com transparência e proteção de dados.
+</p>
 
-  <div class="highlight">
-    Ao utilizar nossos serviços, você, na qualidade de responsável legal,
-    concorda explicitamente com as práticas descritas aqui.
+<div class="highlight">
+Ao utilizar o app, você confirma que é responsável legal pelo menor monitorado.
+</div>
+
+<h2>📱 Funcionalidades do App</h2>
+<ul>
+<li>📍 Localização em tempo real</li>
+<li>⏱ Controle de tempo de uso</li>
+<li>🔒 Bloqueio de aplicativos</li>
+<li>📊 Estatísticas detalhadas</li>
+<li>🚨 Botão SOS</li>
+<li>💬 Chat entre responsável e criança</li>
+</ul>
+
+<h2>🔐 Segurança de Dados</h2>
+<ul>
+<li>Criptografia de ponta (HTTPS/SSL)</li>
+<li>Dados não são vendidos</li>
+<li>Acesso restrito ao responsável</li>
+</ul>
+
+<h2>📊 Monitoramento Inteligente</h2>
+
+<div class="monitoring">
+  <h3 style="text-align:center;">👨‍👦 Controle em tempo real</h3>
+
+  <div class="phone">
+    <div class="stat">📱 Uso hoje: 3h 20min</div>
+    <div class="stat">📍 Local: Em movimento</div>
+    <div class="stat">🔒 Apps bloqueados: 2</div>
+    <div class="stat">🔋 Bateria: 68%</div>
   </div>
 
-  <h2>1. Finalidade do Aplicativo</h2>
-  <p>
-    O Fortiva Guard é uma ferramenta de controle parental destinada exclusivamente ao monitoramento
-    de menores de idade por seus pais ou responsáveis legais.
-  </p>
-  <p>
-    O uso deste aplicativo para monitorar adultos ou para fins ilícitos é estritamente proibido.
-  </p>
+</div>
 
-  <h2>2. Informações que Coletamos</h2>
+<h2>📄 Direitos do Usuário</h2>
+<ul>
+<li>Solicitar exclusão de dados</li>
+<li>Revogar permissões</li>
+<li>Acessar informações armazenadas</li>
+</ul>
 
-  <h3>A. Do Responsável (App Parent)</h3>
-  <ul>
-    <li>Nome, e-mail e senha (criptografados via Firebase Auth)</li>
-    <li>Dados de pagamento processados pela Google Play e RevenueCat</li>
-    <li>Câmera para fotos de perfil ou pareamento</li>
-  </ul>
-
-  <h3>B. Da Criança (App Child)</h3>
-  <ul>
-    <li>Localização precisa em tempo real (inclusive em segundo plano)</li>
-    <li>Uso de aplicativos (tempo de tela)</li>
-    <li>Informações do dispositivo (bateria, modelo, sistema)</li>
-    <li>Microfone para envio voluntário de mensagens de voz</li>
-  </ul>
-
-  <h2>3. Uso de Permissões Sensíveis</h2>
-  <ul>
-    <li><strong>Localização em segundo plano:</strong> essencial para segurança em tempo real</li>
-    <li><strong>Acessibilidade:</strong> usada apenas para bloqueio de apps</li>
-    <li><strong>Administrador do dispositivo:</strong> evita desinstalação não autorizada</li>
-  </ul>
-
-  <h2>4. Compartilhamento de Dados</h2>
-  <ul>
-    <li>Dados da criança são compartilhados apenas com o responsável vinculado</li>
-    <li>Não vendemos ou compartilhamos dados com anunciantes</li>
-    <li>Uso de infraestrutura segura do Google </li>
-  </ul>
-
-  <h2>5. Segurança e Retenção</h2>
-  <ul>
-    <li>Transmissão segura via HTTPS/SSL</li>
-    <li>Histórico de localização armazenado por período limitado</li>
-    <li>Exclusão total dos dados ao deletar a conta</li>
-  </ul>
-
-  <h2>6. Direitos do Usuário</h2>
-  <ul>
-    <li>Acessar, corrigir ou excluir seus dados</li>
-    <li>Revogar permissões no Android</li>
-    <li>Solicitar exclusão completa da conta</li>
-  </ul>
-
-  <h2>7. Alterações nesta Política</h2>
-  <p>
-    Podemos atualizar esta política periodicamente. Mudanças importantes serão notificadas no app.
-  </p>
-
-  <h2>8. Contato</h2>
-  <p>
-    Para dúvidas ou solicitações:
-  </p>
-  <p>
-    📧 E-mail: support@fortiva.tech<br>
-    🌐 Site: fortiva.tech
-  </p>
+<h2>📩 Contato</h2>
+<p>
+📧 support@fortiva.tech<br>
+🌐 fortiva.tech
+</p>
 
 </div>
 
 <footer>
-  © 2026 Fortiva Guard - Todos os direitos reservados
+© 2026 Fortiva Guard - Todos os direitos reservados
 </footer>
 
 </body>
