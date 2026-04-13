@@ -14,6 +14,7 @@
   --brand1:#1e3c72;
   --brand2:#2a5298;
   --danger:#ff4d4d;
+  --safety:#2ecc71;
   --shadow: 0 14px 40px rgba(0,0,0,.12);
   --radius: 18px;
 }
@@ -116,7 +117,7 @@ body{
 }
 
 .section h2{
-  margin: 0 0 10px;
+  margin: 20px 0 10px;
   color: var(--brand1);
 }
 
@@ -140,7 +141,7 @@ li{ margin: 8px 0; color: #24344a; }
 /* CARDS DE RECURSOS */
 .feature-grid{
   display:grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 12px;
   margin-top: 14px;
 }
@@ -167,6 +168,12 @@ li{ margin: 8px 0; color: #24344a; }
 
 .tag-danger{
   background: rgba(255,77,77,.95) !important;
+  border-color: rgba(255,255,255,.28) !important;
+  color:#fff;
+}
+
+.tag-safety{
+  background: #9c27b0 !important;
   border-color: rgba(255,255,255,.28) !important;
   color:#fff;
 }
@@ -288,129 +295,127 @@ footer{
   <section class="hero-title">
     <h1>Política de Privacidade</h1>
     <div class="meta">
-      <span class="pill">Fortiva Guard</span>
-      <span class="pill">Última atualização: 25/03/2026</span>
+      <span class="pill">Fortiva Guard 🛡️</span>
+      <span class="pill">Última atualização: 06/04/2026</span>
     </div>
   </section>
 
   <section class="section">
-    <h2>Recursos principais</h2>
-    <p class="lead">Visão rápida do que o Fortiva Guard entrega para o responsável legal.</p>
+    <h2>Recursos de Proteção de Elite</h2>
+    <p class="lead">Visão atualizada das ferramentas que o Fortiva Guard utiliza para manter sua família segura.</p>
 
     <div class="feature-grid">
       <div class="feature">
-        <div class="tag tag-danger">🚨 SOS</div>
-        <p>Acionamento rápido para emergências com foco em segurança.</p>
+        <div class="tag tag-safety">🛡️ Escudo Emocional</div>
+        <p>Detecção de Bullying e automutilação via IA em tempo real.</p>
       </div>
       <div class="feature">
-        <div class="tag">💬 Chat</div>
-        <p>Comunicação direta entre responsável e criança (incluindo voz, se aplicável).</p>
+        <div class="tag tag-danger">🚨 SOS Ativo</div>
+        <p>Botão de pânico que notifica o responsável instantaneamente.</p>
       </div>
       <div class="feature">
-        <div class="tag">📍 Localização</div>
-        <p>Rastreamento e histórico (quando permitido) para tranquilidade da família.</p>
+        <div class="tag">🎓 Tamy IA</div>
+        <p>Tutor inteligente para auxílio escolar seguro e monitorado.</p>
       </div>
       <div class="feature">
-        <div class="tag">🔒 Bloqueio</div>
-        <p>Bloqueio de apps e regras de uso para reduzir riscos e distrações.</p>
+        <div class="tag">📍 Geo-Localização</div>
+        <p>Rastreamento preciso e histórico de trajetos seguros.</p>
+      </div>
+      <div class="feature">
+        <div class="tag">🔒 Controle Total</div>
+        <p>Gerenciamento de apps, filtro web e limites de tempo.</p>
       </div>
     </div>
   </section>
 
   <section class="section">
     <p class="lead">
-      A sua privacidade e a segurança da sua família são as nossas prioridades número um.
-      Esta Política de Privacidade descreve como o Fortiva Guard (incluindo as versões "Parent" e "Child")
-      coleta, usa, armazena e protege os dados dos usuários.
+      O <strong>Fortiva Guard</strong> foi construído sob o princípio de "Segurança Total com Privacidade Garantida". 
+      Como agora utilizamos Inteligência Artificial Avançada para detecção de riscos, atualizamos nossos termos para 
+      garantir transparência total sobre como protegemos seus filhos.
     </p>
 
     <div class="highlight">
-      Ao utilizar nossos serviços, você, na qualidade de responsável legal, concorda explicitamente com as práticas descritas aqui.
+      Ao ativar o Fortiva Guard, você (responsável legal) consente explicitamente com o monitoramento de segurança e o processamento de dados por IA para proteção do menor.
     </div>
 
-    <h2>1. Finalidade do Aplicativo</h2>
+    <h2>1. Finalidade do Ecossistema</h2>
     <p>
-      O Fortiva Guard é uma ferramenta de Controle Parental destinada exclusivamente ao monitoramento de menores de idade por seus pais ou responsáveis legais.
-      O uso deste aplicativo para monitorar adultos ou para fins ilícitos é estritamente proibido e viola nossos Termos de Uso.
+      O Fortiva Guard é uma solução de <strong>Proteção Parental de Alto Nível</strong>. Ele não é apenas um rastreador, 
+      mas um escudo digital. O uso para monitoramento de adultos, cônjuges ou qualquer fim que não seja a proteção de 
+      menores sob sua responsabilidade é terminantemente proibido.
     </p>
 
-    <h2>2. Informações que Coletamos</h2>
+    <h2>2. Dados Coletados e Processamento</h2>
 
-    <h3>A. Do Responsável (App Parent)</h3>
+    <h3>A. Dados do Responsável (App Parent)</h3>
     <ul>
-      <li>Dados de Cadastro: Nome, e-mail e senha (armazenados de forma criptografada via Firebase Auth)</li>
-      <li>Dados de Faturamento: Processados pela Google Play Store e RevenueCat</li>
-      <li>Câmera: Fotos de perfil ou pareamento</li>
+      <li><strong>Identidade:</strong> Nome, e-mail e Token de Notificação FCM (para você receber os alertas).</li>
+      <li><strong>Assinatura:</strong> Processada de forma segura pela RevenueCat e Google Play.</li>
     </ul>
 
-    <h3>B. Da Criança (App Child)</h3>
+    <h3>B. Dados do Menor (App Child) - Proteção Ativa</h3>
     <ul>
-      <li>Localização precisa em segundo plano</li>
-      <li>Uso de aplicativos (tempo de tela)</li>
-      <li>Informações do dispositivo</li>
-      <li>Microfone para mensagens de voz</li>
+      <li><strong>Localização:</strong> Coletada em tempo real (mesmo com o app fechado) para o recurso de segurança.</li>
+      <li><strong>Análise de Texto (Escudo Emocional):</strong> O app captura fragmentos de texto em apps de mensagens e redes sociais. 
+          Esses textos são analisados localmente e por modelos de IA (Vertex AI/Gemini) apenas para detectar bullying, assédio ou ideação suicida.</li>
+      <li><strong>Interação Acadêmica:</strong> Perguntas enviadas à Tamy IA são armazenadas para histórico escolar e controle dos pais.</li>
+      <li><strong>Telemetria:</strong> Nível de bateria, apps instalados e estatísticas de uso.</li>
     </ul>
 
-    <h2>3. Uso de Permissões Sensíveis</h2>
+    <h2>3. Uso de APIs Sensíveis (Transparência Google)</h2>
     <ul>
-      <li>Localização em segundo plano</li>
-      <li>API de acessibilidade para bloqueio de apps</li>
-      <li>Administrador do dispositivo</li>
+      <li><strong>Serviço de Acessibilidade:</strong> Usado para ler a tela em busca de palavras-chave perigosas, bloquear apps proibidos e aplicar o Filtro Web.</li>
+      <li><strong>Localização em Segundo Plano:</strong> Fundamental para que o SOS e o rastreador funcionem quando o menor mais precisar.</li>
+      <li><strong>Administrador do Dispositivo:</strong> Impede que o app seja desinstalado sem a senha do responsável.</li>
     </ul>
 
-    <h2>4. Compartilhamento de Dados</h2>
+    <h2>4. Inteligência Artificial e Segurança</h2>
+    <p>
+      Os dados de texto capturados pelo <strong>Escudo Emocional</strong> são processados por modelos de Inteligência Artificial seguros. 
+      Textos que não apresentam risco são descartados. Apenas interações classificadas como <strong>BULLYING, SELF_HARM ou SEXUAL_CONTENT</strong> 
+      geram alertas permanentes no painel do responsável.
+    </p>
+
+    <h2>5. Compartilhamento e Retenção</h2>
     <ul>
-      <li>Dados compartilhados apenas com o responsável vinculado</li>
-      <li>Não vendemos dados</li>
-      <li>Uso de infraestrutura segura do Google (Firebase)</li>
+      <li><strong>Zero Venda de Dados:</strong> O Fortiva não comercializa nenhuma informação.</li>
+      <li><strong>Acesso Exclusivo:</strong> Apenas o responsável que realizou o pareamento tem acesso aos dados da criança.</li>
+      <li><strong>Exclusão:</strong> Ao deletar o perfil da criança ou a conta do pai, todos os dados vinculados são apagados permanentemente dos nossos servidores em até 30 dias.</li>
     </ul>
 
-    <h2>5. Segurança e Retenção</h2>
-    <ul>
-      <li>Transmissão via HTTPS/SSL</li>
-      <li>Armazenamento por período limitado</li>
-      <li>Exclusão total ao deletar conta</li>
-    </ul>
-
-    <h2>6. Direitos do Usuário</h2>
-    <ul>
-      <li>Acessar, corrigir ou excluir dados</li>
-      <li>Revogar permissões</li>
-      <li>Solicitar exclusão da conta</li>
-    </ul>
-
-    <h2>7. Alterações nesta Política</h2>
-    <p>Podemos atualizar esta política periodicamente. Notificaremos mudanças importantes no aplicativo.</p>
+    <h2>6. Direitos e Suporte</h2>
+    <p>Você tem total controle sobre os dados. Pode revogar permissões, limpar históricos ou exportar informações através das configurações do App Parent.</p>
 
   </section>
 
-  <!-- BLOCO DE APELO + PAI À DIREITA -->
+  <!-- BLOCO DE APELO -->
   <section class="cta">
     <div class="cta-text">
-      <h2>Zelando pela segurança de quem você mais ama.</h2>
+      <h2>Proteção de verdade na era da Inteligência Artificial.</h2>
       <p>
-        Ser responsável é estar presente — mesmo quando você não está por perto.
-        O <strong>Fortiva Guard</strong> ajuda você a proteger seus filhos com ferramentas claras, seguras e fáceis de usar.
+        O <strong>Fortiva Guard</strong> é o único que combina a precisão da localização com a inteligência do 
+        <strong>Escudo Emocional</strong>. Não apenas saiba onde eles estão, saiba como eles estão se sentindo no mundo digital.
       </p>
       <ul class="cta-points">
-        <li>Mais tranquilidade no dia a dia, com informação na hora certa.</li>
-        <li>Controle parental de verdade: localização, tempo de tela e bloqueios.</li>
-        <li>Feito para famílias que querem proteção sem complicação.</li>
+        <li>Alertas de bullying e riscos emocionais em tempo real.</li>
+        <li>Tamy IA: auxílio nos estudos com monitoramento dos pais.</li>
+        <li>Bloqueio inteligente e filtro web de última geração.</li>
       </ul>
       <div class="cta-actions">
-        <a class="btn btn-primary" href="https://fortiva.tech">Quero proteger minha família</a>
+        <a class="btn btn-primary" href="#">Ativar Proteção de Elite</a>
       </div>
     </div>
 
     <div class="cta-image">
-      <img src="https://i.imgur.com/EOmkxJn.png" alt="Pai monitorando estatísticas" />
+      <img src="https://i.imgur.com/EOmkxJn.png" alt="Responsável monitorando a segurança do filho" />
     </div>
   </section>
 
 </main>
 
 <footer>
-  © 2026 Fortiva Guard - Todos os direitos reservados
+  © 2026 Fortiva Guard - Sistema de Proteção Familiar Avançado
 </footer>
 
 </body>
